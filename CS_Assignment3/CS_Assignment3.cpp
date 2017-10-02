@@ -1,8 +1,8 @@
-/*Conor James Snedeker, Assignment 3.
+/*[REDACTED], Assignment 3.
 This program is meant to create and deal with judge scoring in a contest that has specific rules for judging.
 These rules include the use of fractional scores represented as decimals such
 as 8.3. Scores may range from 0 to 10 and the final score is determined by dropping the highest and lowest scores.
-Intended as a project for Maya Tolappa's C++ Programming course.*/
+Intended as a project for [REDACTED]'s C++ Programming course.*/
 #include <iostream>
 #include <iomanip>
 #include <string>
