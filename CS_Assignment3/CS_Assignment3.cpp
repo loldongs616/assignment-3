@@ -27,7 +27,8 @@ int main()
     lowest_sc = findLowest(score1, score2, score3, score4, score5);
     highest_sc = findHighest(score1, score2, score3, score4, score5);
 
-    cout << "____________________________________________" << endl
+
+    cout << fixed << setprecision(3) << showpoint << "____________________________________________" << endl
          << "Score 1 Score 2 Score 3 Score 4 Score 5" << endl << score1 << '\t' << score2 << '\t' <<
          score3 << '\t' << score4 << '\t' << score5 << '\t' << endl << "Average score: " << average_sc
          << endl << "Lowest score: " << lowest_sc << endl << "Highest score: " << highest_sc << endl;
@@ -36,7 +37,7 @@ int main()
     return 0;
 }
 
-void getJudgeData(string _jname, double &score)
+void getJudgeData(string _jname, double &score)//Function for verifying validity of data. Pass by reference parameters.
 {
     do
     {
@@ -55,7 +56,7 @@ void getJudgeData(string _jname, double &score)
     while (cin.fail() || score < 0 || score > 10);
 }
 
-double getAverage(double _score1, double _score2, double _score3, double _score4, double _score5)
+double getAverage(double _score1, double _score2, double _score3, double _score4, double _score5)//Function for finding average after lowest and highest scores are removed.
 {
     double ret_avg, _lowest_sc, _highest_sc;
 
@@ -66,7 +67,7 @@ double getAverage(double _score1, double _score2, double _score3, double _score4
     return ret_avg;
 }
 
-double findLowest(double __score1, double __score2, double __score3, double __score4, double __score5)
+double findLowest(double __score1, double __score2, double __score3, double __score4, double __score5)//Function for finding lowest score among judges.
 {
     double ret_low;
     ret_low = __score1;
@@ -79,13 +80,11 @@ double findLowest(double __score1, double __score2, double __score3, double __sc
         ret_low = __score4;
     if (__score5 < ret_low)
         ret_low = __score5;
-    else
-        ret_low = __score1;
 
     return ret_low;
 }
 
-double findHighest(double ___score1, double ___score2, double ___score3, double ___score4, double ___score5)
+double findHighest(double ___score1, double ___score2, double ___score3, double ___score4, double ___score5)//Function for finding highest score among judges.
 {
     double ret_high;
     ret_high = ___score1;
@@ -98,8 +97,6 @@ double findHighest(double ___score1, double ___score2, double ___score3, double 
         ret_high = ___score4;
     if (___score5 > ret_high)
         ret_high = ___score5;
-    else
-        ret_high = ___score1;
 
     return ret_high;
 }
